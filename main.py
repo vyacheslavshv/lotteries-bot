@@ -3,8 +3,10 @@ from tortoise import Tortoise
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from bot.config import API_ID, API_HASH, BOT_SESSION, TORTOISE_ORM
-from bot.handlers.message_handlers import message_handlers
-from bot.handlers.callback_handlers import callback_handlers
+from bot.handlers.message_handlers import setup_message_handlers
+from bot.handlers.common_handlers import setup_common_handlers
+from bot.handlers.guides.guides_hundlers import setup_guides_handlers
+
 
 
 async def main():
@@ -13,8 +15,9 @@ async def main():
 
     async with TelegramClient(StringSession(BOT_SESSION), API_ID, API_HASH) as client:
 
-        message_handlers(client)
-        callback_handlers(client)
+        setup_message_handlers(client)
+        setup_common_handlers(client)
+        setup_guides_handlers(client)
 
         await client.run_until_disconnected()
 

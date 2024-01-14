@@ -13,7 +13,7 @@ async def main():
     # Initialize Tortoise ORM
     await Tortoise.init(TORTOISE_ORM)
 
-    client = TelegramClient('../data/bot', API_ID, API_HASH)
+    client = TelegramClient('data/bot', API_ID, API_HASH)
 
     await client.start(bot_token=BOT_TOKEN)
 

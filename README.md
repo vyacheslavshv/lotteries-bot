@@ -33,26 +33,19 @@ The Lottery Bot is a Telegram bot developed to facilitate lottery games, manage 
 
 ## Aerich Database Migrations Setup
 
-Aerich is used for database migrations. Follow these steps to initialize Aerich and create your database schema:
+Aerich is utilized for managing database migrations. Given that the initial Aerich setup and migration files are included in the project repository, you only need to apply the migrations to update your database schema to the latest version.
 
-1. **Initialize Aerich:**
+### Applying Migrations
 
-   Ensure your `TORTOISE_ORM` configuration is set in `bot/config.py`.
+To apply existing migrations to your database, ensuring it's up to date with the latest schema defined in your project, run:
 
-   ```bash
-   aerich init -t bot.config.TORTOISE_ORM --location data/migrations
-   ```
+```bash
+aerich upgrade
+```
 
-2. **Initialize the Database:**
+This command applies all pending migrations to the database, making it reflect the current state of your models as defined in `bot/models` and tracked through the migration files in `data/migrations`.
 
-   ```bash
-   aerich init-db
-   ```
-
-   Run additional migration commands as needed:
-   
-   - To make migrations after model changes: `aerich migrate`
-   - To apply migrations: `aerich upgrade`
+Ensure your `TORTOISE_ORM` configuration in `bot/config.py` is correctly set to point to your database and that Aerich is properly initialized in your project.
 
 ## Configuration and Environment Variables
 
@@ -82,7 +75,7 @@ Before running the application, set up your environment variables. These variabl
 
 ## Setting Up the TON Project
 
-To run the required TypeScript scripts for blockchain interactions, you need to create a TON project using "blueprint":
+To run the required TypeScript scripts for blockchain interactions, you need to create a TON project using "blueprint" for example.
 
 ## Usage
 

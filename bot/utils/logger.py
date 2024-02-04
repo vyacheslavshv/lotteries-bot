@@ -3,7 +3,7 @@ import os
 from logging.handlers import RotatingFileHandler
 
 
-def setup_logger(name, log_dir='../logs', max_log_size=10*1024*1024, backup_count=5):
+def setup_logger(name, log_dir='logs', max_log_size=10*1024*1024, backup_count=5):
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 

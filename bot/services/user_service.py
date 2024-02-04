@@ -1,21 +1,22 @@
-from bot.models.user_models import User
-from tortoise.exceptions import DoesNotExist
+from bot.models import User
 
 
 class UserService:
-    async def get_or_create_user(self, event):
-        user, created = await User.get_or_create(id=event.sender_id)
+    def __init__(self, event):
+        self.event = event
 
-        # Update user details
-        user.name = event.sender.first_name + " " + (event.sender.last_name or "")
-        user.username = event.sender.username
+    async def get_user(self, return_created=False):
+        user, created = await User.get_or_create(id=self.event.sender_id)
+
+        current_name = self.event.sender.first_name + " " + (self.event.sender.last_name or "")
+        current_username = self.event.sender.username
+
+        if user.name != current_name:
+            user.name = current_name
+        if user.username != current_username:
+            user.username = current_username
         await user.save()
 
+        if return_created:
+            return user, created
         return user
-
-    async def is_user_banned(self, user_id):
-        try:
-            user = await User.get(id=user_id)
-            return user.is_banned
-        except DoesNotExist:
-            return False

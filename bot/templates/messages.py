@@ -1,25 +1,25 @@
 WELCOME_MESSAGE = """
 Hi {name} 👋
-
 Welcome to sharing bot 💫🐥
-Here you can invite friends 👥, and for everyone who joined through you, you earn points for them, and you can redeem it for real money or products from the menu.
-We offer 15% more on redemption for products from our menu.
+
+Here you can invite friends 👥, and for everyone who joined through you, you earn points for them, and you can redeem it for real money or products from the menu. We offer 15% more on redemption for products from our menu.
 
 By sharing our robot you can make money in the easiest way 💵💳!
 
-Your balance is: ${balance}
+Your balance is: {balance} points
 """
 
 BALANCE_MESSAGE = """
 Hi {name},
 
-🤑 Your balance is: ${balance}
+🤑 Your balance is: {balance} points
+💳 Wallet address is: {wallet_address}
 
-Withdrawal from the balance is only possible in the amount of $100 or more.
+Withdrawal from the balance is only possible in the amount of 1500 points or more.
 """
 
 WITHDRAW_MESSAGE = """
-Some withdraw message
+You have created a withdrawal request, it will be processed on the 1st of the next month.
 """
 
 PERSONAL_LINK_MESSAGE = """
@@ -29,7 +29,7 @@ Hi {name}, your personal referral link is:
 
 It is recommended to share it in large groups with friends and family to earn more! 🤑
 
-Every new user who registers through your link will earn you $1!
+Every new user who registers through your link will earn you 15 points!
 """
 
 HOW_IT_WORKS_MESSAGE = """
@@ -40,21 +40,21 @@ HOW_IT_WORKS_MESSAGE = """
 
 🖱 Click on the "Share link 🔗" button.
 
-📲 and select the desired option:
+📲 And select the desired option:
 - Sharing a link to WhatsApp
 - Sharing a link to Telegram
 - Sharing a link to Facebook
 
-💰 After copying, share it anywhere you want (posts, Facebook, stickers on the street with a barcode to scan, stories, anything creative you can think of that can make people scan!) and start raking in profits.
+💰 After copying, share it anywhere you want (posts, Facebook, stickers on the street with a barcode to scan, stories, anything creative you can think of that can make people scan) and start raking in profits.
 """
 
 HOW_MUCH_EARN_MESSAGE = """
 💰 How much do you earn?
 
 
-🤑 For every person who registered through your link, you received $1, and the beauty of it? That he only needs to press "Start and join the channel as well!" Without committing to anything. 💰💼
+🤑 For every person who registered through your link, you received 15 points, and the beauty of it? That he only needs to press "Start and join the channel as well!" Without committing to anything. 💰💼
 
-Imagine if 100 people join through your link? You will have a pampering $100! 🚀✨
+Imagine if 100 people join through your link? You will have a pampering 1500 points! 🚀✨
 Let's not talk about higher amounts 😉
 
 Want to check your earnings?
@@ -72,7 +72,7 @@ To withdraw money:
 ⬅️ "My wallet 💳"
 ⬅️ "Withdraw money 💰"
 
-And choose your preferred withdrawal method: PayPal or Crypto. It's quick and easy! 💰👛
+The withdrawal request will be processed on the 1st of every month 💰👛
 """
 
 WHATS_ON_AGENDA_MESSAGE = """
@@ -83,4 +83,14 @@ WHATS_ON_AGENDA_MESSAGE = """
 As our bot gains momentum, get ready for some wild stuff! Wins for money, dream vacations, products and more! 🎉🏖️💰
 
 Stay tuned for exciting surprises coming your way. The adventure has just begun!
+"""
+
+EXPIRED_LINK_MESSAGE = 'Invalid or expired link. Please send any message.'
+
+ATTENDANCE_CHECK_MESSAGE = """
+Attendance check is not available right now. Please try again during the allowed time intervals (UTC):
+
+10:00 - 15:00
+16:00 - 19:00
+20:00 - 23:00
 """

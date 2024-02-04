@@ -18,14 +18,14 @@ async def process_monthly_withdrawals(client):
                 ]
                 subprocess.run(command, cwd=TS_PROJECT_DIR, text=True)
 
-                user.balance = 0
+                # user.balance = 0
                 logger.info(f"Sent ton for {user.name} to wallet {user.wallet_address}")
                 await client.send_message(
                     user.id, f"{ton_amount} ton coins has been transferred to your wallet: {user.wallet_address}"
                 )
 
-            user.withdraw_request = False
-            await user.save()
+            # user.withdraw_request = False
+            # await user.save()
 
         except Exception as e:
             logger.error(f"Error while sending ton to wallet {user.wallet_address}: {e}", exc_info=True)

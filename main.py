@@ -15,16 +15,13 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from pytz import utc
 
-from datetime import datetime
-
 
 async def start_schedulers(client):
     scheduler = AsyncIOScheduler(timezone=utc)
     scheduler.add_job(
         process_monthly_withdrawals,
         CronTrigger(day=1, hour=0, minute=0),
-        (client,),
-        next_run_time=datetime.utcnow()
+        (client,)
     )
     scheduler.add_job(
         delete_old_callback_data,

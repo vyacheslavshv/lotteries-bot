@@ -13,7 +13,7 @@ async def process_monthly_withdrawals(client):
             if user.wallet_address and user.balance > 0:
                 ton_amount = str(user.balance * 0.01)
                 command = [
-                    "npx", "ts-node", "--project", "tsconfig.json", TS_SCRIPT_DIR,
+                    "npx", "ts-node", TS_SCRIPT_DIR,
                     user.wallet_address, ton_amount
                 ]
                 subprocess.run(command, cwd=TS_PROJECT_DIR, text=True)
